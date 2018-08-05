@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- read value from property file -->
+	<context:property-placeholder location="sample.properties"></context:property-placeholder>
+
+	<!-- define the beqn -->
+  	<bean id="myPaint" class="com.main.spring.common.RedPaint"></bean>
+  	
+  	<bean id="myCar" class="com.main.spring.setterInj.Car"  scope="singleton">
+  		<!-- Spring will look for method Name "setPaint"
+  			 first letter of name as capital and matched rest to method name -->
+  		<property name="paint" ref="myPaint"></property>
+  		
+  		<property name="companyName" value="BMW"></property>
+  		
+  		<property name="carName" value="${car.name}"></property>
+  		
+  	</bean>
+
+ </beans>
+
+
+
+
+
