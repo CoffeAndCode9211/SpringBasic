@@ -15,7 +15,7 @@ public class RedPaint implements Paint {
 		System.out.println("Init Method in Paint called");
 	}
 	
-	// will be called only for Singelton scope
+	// will not be called for prototype scope
 	public void destPaint(){
 		System.out.println("Destroy Method in Paint called");
 	}
